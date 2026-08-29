@@ -1,6 +1,4 @@
-# Cordis 在 DeepSeek Harness 里怎么用
-
-对照源码：`D:\Code2026\0815deepseek-harness`。
+# Cordis 在 DeepSeek Harness 使用方法
 
 DeepSeek Harness 把整套 agent 都做成 **Cordis 插件**。工具、LLM、session、agent loop、Web UI 不是硬编码启动顺序，而是挂到同一个 `Context` 上，靠 `inject` 等依赖就绪，靠 `cordis.yml` / `cordis.patch.yml` 选装哪一组插件。
 
@@ -49,7 +47,7 @@ npm run demo:all
 ```powershell
 npm run demo:01    # 第一个插件
 npm run demo:02    # effect / 卸载
-npm run demo:03    # Service + inject（yml 里 consumer 写在 greeter 前面也没事）
+npm run demo:03    # Service + inject：super(ctx, 'hello') → ctx.hello
 npm run demo:04    # emit 广播
 npm run demo:04w   # waterfall 包装 / 短路
 npm run demo:05    # 合法 config，缺省 greeting
@@ -64,7 +62,7 @@ npm run demo:07    # 迷你 tools 注册表 + 观察者
 在 Harness 仓库里跑官方教程（需要那边 `pnpm install` 完整）：
 
 ```powershell
-cd D:\Code2026\0815deepseek-harness
+cd D:\Code\deepseek-harness
 mkdir tmp\cordis-tutorial
 cd tmp\cordis-tutorial
 # 按 docs/cordis-tutorial/ 各章写文件

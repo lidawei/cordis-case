@@ -2,13 +2,14 @@ import { Service, type Context } from '@deepseek-ai/cordis'
 
 declare module '@deepseek-ai/cordis' {
   interface Context {
-    greeter: GreeterService
+    hello1: Greeter
   }
 }
 
-export class GreeterService extends Service {
+export class Greeter extends Service {
   constructor(ctx: Context) {
-    super(ctx, 'greeter')
+    // The string here is the Context key. Class name Greeter does not matter.
+    super(ctx, 'hello1')
   }
 
   greet(who: string) {
@@ -19,5 +20,5 @@ export class GreeterService extends Service {
 export const name = 'greeter'
 
 export function apply(ctx: Context) {
-  ctx.plugin(GreeterService)
+  ctx.plugin(Greeter)
 }

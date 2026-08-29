@@ -13,6 +13,6 @@ await ctx.plugin(Loader)
 await ctx.loader.create({
   name: '@deepseek-ai/cordis-plugin-include',
   config: {
-    path: './cordis.yml',
+    path: process.env.CORDIS_YML ?? './cordis.yml',
   },
 })

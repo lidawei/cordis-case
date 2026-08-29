@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Cordis demo",
+      "runtimeArgs": ["--import", "tsx"],
+      "program": "${workspaceFolder}/bin.js",
+      "cwd": "${workspaceFolder}/demos/${input:demoName}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug current demo folder",
+      "runtimeArgs": ["--import", "tsx"],
+      "program": "${workspaceFolder}/bin.js",
+      "cwd": "${fileDirname}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "demoName",
+      "type": "pickString",
+      "description": "Which demo to launch (cwd must contain cordis.yml)",
+      "options": [
+        "01-first-plugin",
+        "02-lifecycle",
+        "03-services",
+        "04-events",
+        "04-waterfall",
+        "05-config",
+        "05-config-invalid",
+        "06-pending",
+        "06-pending-ok",
+        "07-mini-harness"
+      ]
+    }
+  ]
+}
