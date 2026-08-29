@@ -21,6 +21,12 @@ export class StatsService extends Service {
     this.counts.set(name, next)
     this.ctx.emit('stats/report', name, next)
   }
+
+  on(callback: (name: string, count: number) => void) {
+    this.ctx.on('stats/report', (name, count) => {
+      callback(name, count)
+    })
+  }
 }
 
 export const name = 'stats'
