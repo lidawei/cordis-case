@@ -16,7 +16,7 @@ export class StatsService extends Service {
     super(ctx, 'stats')
   }
 
-  bump(name: string) {
+  emit(name: string) {
     const next = (this.counts.get(name) ?? 0) + 1
     this.counts.set(name, next)
     this.ctx.emit('stats/report', name, next)

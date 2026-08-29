@@ -8,7 +8,7 @@ export function apply(ctx: Context) {
   ctx.on('stats/report', (name, count) => {
     console.log(`[stats] ${name} --> ${count}`)
   })
-  ctx.stats.bump('tool_call')
-  ctx.stats.bump('tool_call')
-  ctx.stats.bump('prompt')
+  ctx.stats.emit('tool_call')
+  ctx.stats.emit('tool_call')
+  ctx.stats.emit('prompt')
 }
