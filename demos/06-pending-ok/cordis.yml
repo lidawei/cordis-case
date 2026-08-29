@@ -1,0 +1,2 @@
+- name: '@deepseek-ai/cordis-plugin-timer'
+- name: './needs-timer.ts'

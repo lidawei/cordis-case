@@ -1,0 +1,30 @@
+{
+  "name": "cordis-demos",
+  "private": true,
+  "type": "module",
+  "description": "Standalone Cordis demos mirroring how DeepSeek Harness uses the framework",
+  "scripts": {
+    "demo:01": "node scripts/run.mjs 01-first-plugin",
+    "demo:02": "node scripts/run.mjs 02-lifecycle",
+    "demo:03": "node scripts/run.mjs 03-services",
+    "demo:04": "node scripts/run.mjs 04-events",
+    "demo:04w": "node scripts/run.mjs 04-waterfall",
+    "demo:05": "node scripts/run.mjs 05-config",
+    "demo:05bad": "node scripts/run.mjs 05-config-invalid",
+    "demo:06": "node scripts/run.mjs 06-pending",
+    "demo:06ok": "node scripts/run.mjs 06-pending-ok",
+    "demo:07": "node scripts/run.mjs 07-mini-harness",
+    "demo:all": "node scripts/run-all.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/cordis-plugin-include": "^1.0.6",
+    "@deepseek-ai/cordis-plugin-loader": "^1.0.2",
+    "@deepseek-ai/cordis-plugin-timer": "^1.0.0",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  }
+}
